@@ -11,11 +11,14 @@ export function ToastProvider({ children }) {
     setToasts((current) => current.filter((toast) => toast.id !== id));
   }, []);
 
-  const showToast = useCallback((message, type = "info", duration = 3000) => {
-    const id = crypto.randomUUID();
-    setToasts((current) => [...current, { id, message, type, duration }]);
-    setTimeout(() => dismissToast(id), duration);
-  }, [dismissToast]);
+  const showToast = useCallback(
+    (message, type = "info", duration = 3000) => {
+      const id = crypto.randomUUID();
+      setToasts((current) => [...current, { id, message, type, duration }]);
+      setTimeout(() => dismissToast(id), duration);
+    },
+    [dismissToast],
+  );
 
   return (
     <ToastContext.Provider value={{ showToast, dismissToast }}>

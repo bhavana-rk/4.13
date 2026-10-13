@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { useToast } from "../context/ToastContext.jsx";
+import { useState } from "react";
 import { createThread } from "../api/mockApi.js";
+import { useToast } from "../context/ToastContext.jsx";
 
 export default function CreateThreadForm() {
   const [title, setTitle] = useState("");
@@ -26,8 +26,8 @@ export default function CreateThreadForm() {
     <form className="card" onSubmit={handleSubmit}>
       <h2>Create a thread</h2>
       <p className="hint">
-        Tip: the title <code>Welcome to Threadbase</code> already exists, so posting it
-        triggers a duplicate-title error.
+        Tip: the title <code>Welcome to Threadbase</code> already exists, so
+        posting it triggers a duplicate-title error.
       </p>
       <input
         className="input"

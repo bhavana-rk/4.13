@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { useToast } from "../context/ToastContext.jsx";
+import { useState } from "react";
 import { login } from "../api/mockApi.js";
+import { useToast } from "../context/ToastContext.jsx";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
@@ -26,8 +26,8 @@ export default function LoginForm() {
     <form className="card" onSubmit={handleSubmit}>
       <h2>Log in</h2>
       <p className="hint">
-        Correct login: <code>ada</code> / <code>password</code>. Anything else triggers an
-        error toast.
+        Correct login: <code>ada</code> / <code>password</code>. Anything else
+        triggers an error toast.
       </p>
       <input
         className="input"
